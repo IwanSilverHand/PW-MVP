@@ -1,0 +1,67 @@
+<!DOCTYPE html><!--  This site was created in Webflow. http://www.webflow.com  -->
+<!--  Last Published: Wed Sep 01 2021 06:10:30 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="61280f93e64da8b5a7771aab" data-wf-site="61280f93e64da87e5a771aaa">
+<head>
+  <meta charset="utf-8">
+  <title>Leaflet & Airtable Practice</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/google-maps.css" rel="stylesheet" type="text/css">
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="navbar">
+    </div>
+    <div id="mapid"></div>
+  </div>
+  <div id="modal" class="location_modal">
+    <div id="location_wrapper" class="location_wrapper">
+      <div class="w-dyn-list">
+        <div role="list" class="w-dyn-items">
+          <div role="listitem" class="w-dyn-item">
+            <div id="location_image" class="location_picture"></div>
+            <div class="location_container">
+              <div class="location_main_frame">
+                <div id="location_category" class="location_category"></div>
+                <h1 id="location_title" class="location_title"></h1>
+                <div id="location_description" class="w-richtext"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-dyn-empty">
+          <div>No items found.</div>
+        </div>
+      </div>
+      <div class="location_feed w-dyn-list">
+        <div role="list" class="collection-list-3 w-dyn-items">
+          <div role="listitem" class="w-dyn-item">
+            <div class="div-block">
+              <p id="w-node-_855a9c1e-1710-2ccf-528f-bb9635bab049-a7771aab"></p>
+              <h4 id="w-node-_855a9c1e-1710-2ccf-528f-bb9635bab04a-a7771aab"></h4><img id="w-node-_855a9c1e-1710-2ccf-528f-bb9635bab04b-a7771aab" loading="lazy" width="55" alt="" src="" class="location_user_image">
+            </div>
+          </div>
+        </div>
+        <div class="w-dyn-empty">
+          <div>No items found.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="html-embed w-embed w-script">
+  </div>
+  <!--
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz7aOxc-znNQ3oQ2XIx7O2yowXZKzfNTQ&callback=initMap&libraries=&v=weekly" async=""></script>
+  -->
+  <script src="js/google_maps.js"></script>
+  <script src="js/index.js"></script>
+  <!--<script src="js/air.js"></script>-->
+</body>
+</html>
