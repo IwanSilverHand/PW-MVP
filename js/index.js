@@ -2,12 +2,7 @@
 const modal = document.querySelector("#modal");
 const navbar = document.querySelector(".navbar");
 let modalValue = false;
-let id;
-let latitud;
-let longitud;
-let response;
-let data;
-let img;
+let id, latitud, longitud, response, data, img;
 
 const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -22,10 +17,10 @@ navigator.geolocation.getCurrentPosition(function(position){
   //Esto ajusta el mapa y a la ubicación del dispositivo.
   mymap.setView([latitud, longitud], 13);
   tiles.addTo(mymap);
-  //console.log(latitud,longitud);
+  L.marker([latitud, longitud]).addTo(mymap);
 });
 
-//Esta función revisa que boton hizo click
+//Esta función revisa que boton hizo 
 navbar.addEventListener("click", e => {
   const target = e.target.closest(".w-button"); // see if the click landed inside a button
   if (!target) return; // bail if it wasn't inside a button
@@ -41,13 +36,20 @@ async function getAirData(){
   response = await fetch(Airtable_URL);
   data =  await response.json();
   //Loop que genera los botones.
-     for (let i = 0; i < data.records.length; i++) {
+    for (let i = 0; i < data.records.length; i++) {
       let newButton = document.createElement('div');
       newButton.setAttribute('class','w-button');
       newButton.innerText = data.records[i].fields.Location;
       newButton.setAttribute('data-index', i);
       navbar.appendChild(newButton);
-      }
+      // Esto genera los pines.
+      let dataName = data.records[i].fields.Location;
+      let pinLat = data.records[i].fields.Latitude;
+      let pinLon = data.records[i].fields.Longitude;
+      //L.marker([pinLat, pinLon]).addTo(mymap);
+      L.marker([pinLat, pinLon]).addTo(mymap).bindPopup(`<div class="navbar"><div class="w-button" data-index="${i}"><p>${dataName}</p></div></div>`);
+    }
+
 }
 
 // Función que abre el Modal
@@ -83,3 +85,7 @@ function print(){
 
 window.onload = getAirData()
 // Ctlr + K + C para comentar lineas de codigo
+
+function queryMarker(feature, layer) {
+	console.log(feature);
+}
