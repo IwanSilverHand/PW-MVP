@@ -922,7 +922,7 @@ label {
   margin-top: auto;
   padding: .8em 1.2em;
   font-family: Work Sans, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1;
   text-decoration: none;
@@ -1150,6 +1150,7 @@ label {
   display: flex;
   position: absolute;
   top: 100%;
+  overflow: hidden;
 }
 
 .container.is-spot.edit {
@@ -1204,6 +1205,7 @@ label {
   grid-column-gap: 22px;
   grid-row-gap: 22px;
   flex-direction: column;
+  margin-top: 32px;
   display: flex;
   overflow: hidden;
 }
@@ -1267,11 +1269,13 @@ label {
 }
 
 .spot_header-img {
+  z-index: 0;
   width: 100%;
   max-height: 275px;
   min-height: 275px;
   object-fit: cover;
   flex: none;
+  position: relative;
 }
 
 .spot_header {
@@ -1301,8 +1305,10 @@ label {
 .spot_detail-wrap {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
+  background-color: #fafafa;
   flex-direction: column;
   flex: 1;
+  justify-content: flex-start;
   align-items: stretch;
   display: flex;
 }
@@ -1315,10 +1321,12 @@ label {
 }
 
 .spot_cont {
+  z-index: 1;
   flex-direction: column;
   flex: 1;
   justify-content: flex-start;
   display: flex;
+  position: relative;
   overflow: auto;
 }
 
@@ -1362,6 +1370,7 @@ label {
 }
 
 .spot_close {
+  z-index: 5;
   width: 28px;
   height: 28px;
   cursor: pointer;
@@ -1380,6 +1389,7 @@ label {
   flex: 1;
   padding: 24px 16px 26px;
   display: flex;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 991px) {
