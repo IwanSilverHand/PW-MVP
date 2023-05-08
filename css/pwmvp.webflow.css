@@ -1276,6 +1276,7 @@ label {
   object-fit: cover;
   flex: none;
   position: relative;
+  margin-top: auto;
 }
 
 .spot_header {
