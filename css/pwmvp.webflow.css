@@ -1276,7 +1276,6 @@ label {
   object-fit: cover;
   flex: none;
   position: relative;
-  margin-top: auto;
 }
 
 .spot_header {
@@ -1288,6 +1287,7 @@ label {
   align-items: flex-start;
   padding: 24px 16px;
   display: flex;
+  margin-top: auto;
 }
 
 .spot_location-cont {
